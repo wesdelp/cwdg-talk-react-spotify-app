@@ -1,12 +1,9 @@
-// Spotify Artist Search
-// HacKSU ReactJS Talk 02.16.2016
-// Wes Delp
+// Spotify Search
 
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import * as API from './api/spotify';
 
-// Components
 import SearchBar from './components/SearchBar';
 import ArtistInfo from './components/ArtistInfo';
 import ArtistTracks from './components/ArtistTracks';
