@@ -1,12 +1,9 @@
-// Spotify Artist Search
-// HacKSU ReactJS Talk 02.16.2016
-// Wes Delp
+// Spotify Search
 
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import * as API from './api/spotify';
 
-// Components
 import SearchBar from './components/SearchBar';
 import ArtistInfo from './components/ArtistInfo';
 import ArtistTracks from './components/ArtistTracks';
@@ -18,29 +15,19 @@ class App extends Component {
       artistInfo: {},
       artistTracks: []
     };
-
-    this.handleArtistSearch('Green Day');
   }
 
   handleArtistSearch(artist) {
     API.fetchArtist(artist, (data) => {
-      this.setState({
-        artistInfo : data.info,
-        artistTracks: data.tracks
-      });
-      console.log(this.state)
+      console.log("STATE:", data)
     });
   }
 
   render() {
-    const {artistInfo, artistTracks} = this.state
 
     return (
       <div>
-        <h2 className="title">Spotify Search</h2>
-        <SearchBar handleArtistSearch={this.handleArtistSearch.bind(this)} />
-        <ArtistInfo artistInfo = {artistInfo} />
-        <ArtistTracks artistTracks = {artistTracks} />
+        <h2 className="title">Welcome to React</h2>
       </div>
     );
   }
