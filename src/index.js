@@ -28,7 +28,7 @@ class App extends Component {
         artistInfo : data.info,
         artistTracks: data.tracks
       });
-      console.log(this.state)
+      console.log("STATE:", this.state)
     });
   }
 

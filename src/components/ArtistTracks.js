@@ -1,19 +1,19 @@
 import React, { Component } from 'react';
 
-const ArtistInfo = (props) => {
+const artistTracks = (props) => {
   if (!props.artistTracks || props.artistTracks.length == 0) {
     return (<div></div>)
   }
 
-  const {artistTracks} = props
-
   return (
     <div>
-      <h6><b>Top Tracks</b></h6>
+      <h5>Top Tracks</h5>
       <ul>
-        {artistTracks.map((track) => {
+        {props.artistTracks.map((track) => {
           return (
-            <li>{track}</li>
+            <li key={track}>
+              {track}
+            </li>
           )
         })}
       </ul>
@@ -21,4 +21,4 @@ const ArtistInfo = (props) => {
   );
 };
 
-export default ArtistInfo;
+export default artistTracks;

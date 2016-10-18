@@ -16,7 +16,7 @@ class SearchBar extends Component {
         <input
           value="Search"
           type="submit"
-          onClick={event => this.searchButtonPressed(this.state.term)} />
+          onClick={event => this.onSearchButtonPressed(this.state.term)} />
       </div>
     );
   }
@@ -25,7 +25,7 @@ class SearchBar extends Component {
     this.setState({term});
   }
 
-  searchButtonPressed(term) {
+  onSearchButtonPressed(term) {
     this.props.handleArtistSearch(term);
   }
 }

@@ -9,7 +9,7 @@ export function fetchArtist(artist, callback) {
   Api.get(`${BASE_URL}/${VERSION}/search?type=artist&q=${query}`).then(response => {
     let artist = response.artists.items[0];
 
-    if (!artist) alert('No Artist Found');
+    if (!artist) return;
 
     fetchSongs(artist.id, (topTracks) => {
       let data = {
